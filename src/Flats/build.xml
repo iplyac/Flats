@@ -1,0 +1,66 @@
+<project name="FlatsTest" default="compile" basedir="." >
+    <description>
+        Flats Tests
+    </description>
+  
+  <property name="project_name" value="FlatsTestJunit"/>
+  <property name="src" location="."/>
+  <property name="build" location="${user.home}/FlatsTest/bin"/>
+  <property name="dist"  location="${user.home}/FlatsTest/dist"/>
+  <property name="res"  location="${user.home}/FlatsTest/res"/>
+  <property name="reports" location="${user.home}/FlatsTest/reports"/>
+  <property name="jar_name" value="${project_name}.jar"/>
+  <property name="war_name" value="${project_name}.war"/>
+
+  <path id="project.classes">
+  	<pathelement location="${build}" />
+  	<fileset dir="${basedir}/../../lib">
+  		<include name="**/*.jar"/>
+  	</fileset>
+  </path>
+
+	
+  <target name="compile" depends="clean, init" description="Compiling ..." >
+		<javac srcdir="${src}" destdir="${build}" includeantruntime="false" encoding="UTF-8">  
+			<classpath refid="project.classes" />
+		</javac>
+  </target>
+
+    <target name="test" depends="compile" description="Run tests ...">
+            <junit printsummary="on" fork="no" haltonerror="no">
+            	<sysproperty key="general.url" value="${url}" />
+            	<sysproperty key="browser.class" value="${browser}" />
+            	<sysproperty key="driver.path" value="${src}/../../lib/" />
+            	<batchtest fork="yes" todir="${reports}">
+            		<formatter type="brief" />
+            		<fileset dir="${build}">
+            		<include name="**/Test*.class"/>
+            		</fileset>
+            	</batchtest> 
+				<classpath refid="project.classes" />            	
+            </junit>
+    </target>
+	
+	
+  <target name="dist" depends="compile" description="generate the distributable files " >
+    <jar jarfile="${dist}/${jar_name}" basedir="${build}"/>
+  </target> 
+
+  <target name="clean"   description="clean up" >
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+    <delete dir="${reports}"/>
+  </target>
+	
+ <target name="init" depends="clean" description="initialize the build environment" >
+    <tstamp/>
+    <mkdir dir="${build}"/>
+    <mkdir dir="${dist}/lib"/>
+    <mkdir dir="${reports}"/>
+  </target>
+  
+  <target name="all" depends="clean, test">
+  	
+  </target>
+  
+</project>
