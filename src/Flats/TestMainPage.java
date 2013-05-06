@@ -147,7 +147,6 @@ public void testMainPage_flats16(){
 	driver.findElement(By.xpath(".//*[@id='requestCall']")).click();
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='successResponce']")));
 	driver.findElement(By.xpath(".//*[@id='callform']/div/div[1]/a")).click();
-	
 }
 
 	

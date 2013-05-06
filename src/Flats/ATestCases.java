@@ -40,7 +40,6 @@ public void setUp() throws ClassNotFoundException,
 @AfterClass
 public void tearDown() throws Exception{
 	driver.quit();
-	
 }
 
 }
