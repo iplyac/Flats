@@ -17,7 +17,7 @@ public void testLoginValid_flats8(){
 	driver.findElement(By.id("j_username")).sendKeys("testUser");
 	driver.findElement(By.id("j_password")).sendKeys("Flats123");
 	driver.findElement(By.name("login")).click();
-	wait.until(ExpectedConditions.titleIs("Квартиры посуточно в Екатеринбурге и Челябинске, снять квартиру на сутки"));
+	wait.until(ExpectedConditions.titleIs("Аренда квартир посуточно, на сутки недорого - Wikirent"));
 	Assert.assertTrue(driver.findElement(By.className("welcome")).getText().equals("Здравствуйте, testUser"));
 	Assert.assertTrue(driver.findElement(By.linkText("Выйти")).isDisplayed());
 	Assert.assertTrue(driver.findElement(By.linkText("Профиль пользователя")).isDisplayed());
@@ -30,7 +30,7 @@ public void testLoginValid_flats4(){
 	driver.findElement(By.id("j_username")).sendKeys("testLessor");
 	driver.findElement(By.id("j_password")).sendKeys("Flats123");
 	driver.findElement(By.name("login")).click();
-	wait.until(ExpectedConditions.titleIs("Квартиры посуточно в Екатеринбурге и Челябинске, снять квартиру на сутки"));
+	wait.until(ExpectedConditions.titleIs("Аренда квартир посуточно, на сутки недорого - Wikirent"));
 	Assert.assertTrue(driver.findElement(By.className("welcome")).getText().equals("Здравствуйте, testLessor"));
 	Assert.assertTrue(driver.findElement(By.linkText("Выйти")).isDisplayed());
 	Assert.assertTrue(driver.findElement(By.linkText("Профиль пользователя")).isDisplayed());

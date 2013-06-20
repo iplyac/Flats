@@ -31,7 +31,7 @@ public void testRegistration_simple_flats1()throws Exception{
 	Assert.assertTrue(driver.findElement(By.className("welcome")).getText().equals("Здравствуйте, "+username));
 	Assert.assertTrue(driver.findElement(By.linkText("Выйти")).isDisplayed());
 	Assert.assertTrue(driver.findElement(By.linkText("Профиль пользователя")).isDisplayed());
-	Assert.assertEquals("Квартиры посуточно в Екатеринбурге и Челябинске, снять квартиру на сутки", driver.getTitle());
+	Assert.assertEquals("Аренда квартир посуточно, на сутки недорого - Wikirent", driver.getTitle());
 	}
 
 public void testRegistration_lessor_flats2()throws Exception{
