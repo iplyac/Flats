@@ -8,6 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import junit.framework.TestCase;
 
+/**
+ * dsadasdasd
+ */
+
 public abstract class ATestCases extends TestCase {
 	
 	protected static WebDriver driver;
