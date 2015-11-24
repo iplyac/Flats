@@ -10,6 +10,8 @@ import junit.framework.TestCase;
 
 /**
  * dsadasdasd
+ *
+ * asdsadasdasdasd
  */
 
 public abstract class ATestCases extends TestCase {
